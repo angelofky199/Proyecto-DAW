@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="libCapas.js"></script>
+        <link rel="stylesheet" href=../CSS/menu_desplegable.css type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    </head>
+    <body>
+        <div id="banner">
+            DropTech
+        </div>
+        <div id="principal">
+
+            <ul class="nav">
+                <li><a href="#" onclick="Cargar('contacto.html', 'contenido');
+                        return false"> Empresa </a></li>
+                <li><a href="#"> Tienda Virtual</a>
+                    <ul>
+                        <li><a href="#" onclick="Cargar('productos_soft.html', 'contenido');
+                        return false"> Productos software </a></li>
+                        <li><a href="#" onclick="Cargar('productos_hard.html', 'contenido'); return false" > Productos hardware</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="Cargar('carrito.html', 'contenido'); return false" > Cesta de la compra</a></li>
+                <li><a href="" > Usuario</a>
+
+                    <ul>
+                        <li><a href="" onclick="Cargar('login_usuario.html', 'contenido');
+                                return false"> Iniciar Sesión </a></li>
+                        <li><a href="" onclick="Cargar('registro_usuario.html', 'contenido');
+                                return false"> Registrarse </a></li>
+                    </ul>
+                </li>
+                <li><a href="" onclick="Cargar('login_mantenimiento.html', 'contenido');
+                        return false"> Administrador </a></li>
+            </ul>
+
+        </div>
+
+    </body>
+</html>
