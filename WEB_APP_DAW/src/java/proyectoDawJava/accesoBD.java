@@ -36,13 +36,26 @@ public class accesoBD {
         return conexionBD != null;
     }
 
-    public ResultSet obtenerProductosBD() {
+    public ResultSet obtenerProductosSoftBD() {
         abrirConexionBD();
         ResultSet resultados = null;
         try {
             String con;
             Statement s = conexionBD.createStatement();
-            con = "SELECT id,nombre,descripcion,precio,existencias FROM productos";
+            con = "SELECT id,nombre,descripcion,precio,existencias FROM productos_soft";
+            resultados = s.executeQuery(con);
+        } catch (Exception e) {
+            System.out.println("Error ejecutando la consulta a la BB.DD....");
+        }
+        return resultados;
+    }
+     public ResultSet obtenerProductosHardBD() {
+        abrirConexionBD();
+        ResultSet resultados = null;
+        try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            con = "SELECT id,nombre,descripcion,precio,existencias FROM productos_hard";
             resultados = s.executeQuery(con);
         } catch (Exception e) {
             System.out.println("Error ejecutando la consulta a la BB.DD....");

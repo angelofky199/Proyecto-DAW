@@ -1,24 +1,23 @@
 <%-- 
-    Document   : productos_soft
-    Created on : 06-abr-2017, 13:30:22
+    Document   : productos_hard
+    Created on : 27-abr-2017, 13:43:58
     Author     : Usuario
 --%>
 
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" import="proyectoDawJava.*" pageEncoding="UTF-8"%>
+<%@page import="proyectoDawJava.accesoBD"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href=../CSS/productos.css type="text/css"/>
-        <script type="text/javascript" src="./js/libCapas.js"></script>
+        <title>JSP Page</title>
     </head>
     <body>
         <%
             accesoBD con = new accesoBD();
-            ResultSet productos = con.obtenerProductosSoftBD();
+            ResultSet productos = con.obtenerProductosHardBD();
         %>
 
         <%
