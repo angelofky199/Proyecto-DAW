@@ -27,7 +27,7 @@ and open the template in the editor.
 
 #principal{
     margin: auto;
-    height: 38px;
+    height: 100%;
     background-color: black;
     
 }

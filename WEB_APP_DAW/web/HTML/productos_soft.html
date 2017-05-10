@@ -1,71 +1,53 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%
+accesoBD con = new accesoBD();
+ResultSet productos = con.obtenerProductosBD();
+%>
+<div class="lista_productos">
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion</li>
+        </ul>
+    </div>
 
-<html>
-    <head>
-        
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href=../CSS/productos.css type="text/css"/>
-    </head>
-    <body>
-        <%
-        accesoBD con = new accesoBD();
-        ResultSet productos = con.obtenerProductosBD();
-        %>
-        <div class="lista_productos">
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion</li>
-                </ul>
-            </div>
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion</li>
+        </ul>
+    </div>
 
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion</li>
-                </ul>
-            </div>
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion</li>
+        </ul>
+    </div>
 
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion</li>
-                </ul>
-            </div>
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion</li>
+        </ul>
+    </div>
 
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion</li>
-                </ul>
-            </div>
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion </li>
+        </ul>
+    </div>
 
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion </li>
-                </ul>
-            </div>
-
-            <div class="producto">
-                <img src="recursos/logo.jpg" width="250" height="250">
-                <ul>
-                    <li>Precio</li>
-                    <li>Descripcion</li>
-                </ul>
-            </div>
-        </div>
-    </body>
-</html>
+    <div class="producto">
+        <img src="recursos/logo.jpg" width="250" height="250">
+        <ul>
+            <li>Precio</li>
+            <li>Descripcion</li>
+        </ul>
+    </div>
+</div>
