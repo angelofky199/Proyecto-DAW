@@ -25,7 +25,7 @@
             if (productos == null) {
         %>
         <h2> No hay productos en la base de datos </h2>
-        %>
+       
 
         <%
         } else {
