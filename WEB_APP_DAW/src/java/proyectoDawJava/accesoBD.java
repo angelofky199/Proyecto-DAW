@@ -36,30 +36,40 @@ public class accesoBD {
         return conexionBD != null;
     }
 
-    public ResultSet obtenerProductosSoftBD() {
+    public ResultSet obtenerProductosBD() {
         abrirConexionBD();
         ResultSet resultados = null;
         try {
             String con;
             Statement s = conexionBD.createStatement();
-            con = "SELECT id,nombre,descripcion,precio,existencias FROM productos_soft";
+            con = "SELECT id,nombre,descripcion,precio,existencias,tipo FROM productos";
             resultados = s.executeQuery(con);
         } catch (Exception e) {
             System.out.println("Error ejecutando la consulta a la BB.DD....");
         }
         return resultados;
     }
-     public ResultSet obtenerProductosHardBD() {
+   
+     public int existenciasProductoBD(int id) throws SQLException {
         abrirConexionBD();
         ResultSet resultados = null;
+        int existencias;
         try {
             String con;
             Statement s = conexionBD.createStatement();
-            con = "SELECT id,nombre,descripcion,precio,existencias FROM productos_hard";
+            con = "SELECT existencias FROM productos WHERE id = " + String.valueOf(id);
             resultados = s.executeQuery(con);
         } catch (Exception e) {
             System.out.println("Error ejecutando la consulta a la BB.DD....");
         }
-        return resultados;
+        if(resultados==null){
+            existencias = 0;
+        }
+        else
+            existencias = resultados.getInt("existencias");
+        
+        return existencias;
     }
+     
+     
 }

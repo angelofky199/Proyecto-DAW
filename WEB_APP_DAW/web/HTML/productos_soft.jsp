@@ -3,7 +3,7 @@
 
 <%
     accesoBD con = new accesoBD();
-    ResultSet productos = con.obtenerProductosSoftBD();
+    ResultSet productos = con.obtenerProductosBD();
 %>
 
 <%
@@ -23,25 +23,30 @@
             String descripcion = productos.getString("descripcion");
             float precio = productos.getFloat("precio");
             int cantidad = productos.getInt("existencias");
+            String tipo = productos.getString("tipo");
 
-            /*Algoritmo para hacer un salto de linea en la descripcion 
-             cuando esta supera un limite de caracteres*/
-            String h1;
-            String h2;
-            String palabra = " ";
+            
+            if (tipo.equals("soft")) {
+                
 
-            if (descripcion.length() > 40) {
-                for (int i = 0; i < descripcion.length(); i++) {
-                    if (i == 30) {
+                /*Algoritmo para hacer un salto de linea en la descripcion 
+                 cuando esta supera un limite de caracteres
+                 String h1;
+                 String h2;
+                 String palabra = " ";
 
-                        h1 = descripcion.substring(i - 30, i);
+                 if (descripcion.length() > 40) {
+                 for (int i = 0; i < descripcion.length(); i++) {
+                 if (i == 30) {
 
-                        h2 = descripcion.substring(i, descripcion.length());
+                 h1 = descripcion.substring(i - 30, i);
 
-                        palabra = palabra + h1 + "\n" + h2;
-                    }
-                }
-            }
+                 h2 = descripcion.substring(i, descripcion.length());
+
+                 palabra = palabra + h1 + "\n" + h2;
+                 }
+                 }
+                 }*/
     %>
 
     <div class="col-lg-4">
@@ -50,10 +55,20 @@
         </div>
         <div class="col-lg-6"><h4><%=nombre%></h4></div>
         <div class="col-lg-6"><h3><%=precio%>€<h3></div>
-                    <div class="col-lg-12 text-justify"><p><%=descripcion%></p></div>
-                    </div>
-                    <%}
-                }%>
+        <div class="col-lg-12 text-justify"><p><%=descripcion%></p></div>
+        <div class="col-lg-12 text-justify">
+            <form method="post" onsubmit="ProcesarForm(this, 'carrito')">
+            <%=nombre%>
+            <%=precio%>
+            <input type="submit" value="Añadir al carrito">
+           
+        </form>
+        
+        </div>
+        
+    </div>
+                    
+                <%}%>
+            <%}%>
+        <%}%>            </div>
 
-                    </div>
-                    </div>
