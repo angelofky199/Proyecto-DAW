@@ -26,7 +26,7 @@
             String tipo = productos.getString("tipo");
 
             
-            if (tipo.equals("soft")) {
+            if (tipo.equals("software")) {
                 
 
                 /*Algoritmo para hacer un salto de linea en la descripcion 

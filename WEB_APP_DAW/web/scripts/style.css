@@ -1,0 +1,706 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: helveticaLT;
+    src: url("../fuentes/helveticaLT.eot") /* EOT file for IE */
+}
+
+@font-face {
+    font-family: helveticaLT;
+    src: url("../fuentes/helveticaLT.ttf") /* TTF file for CSS3 browsers */
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	cursor:pointer !important;
+}
+body {
+    background-attachment: fixed;
+    background-color: #E8E7E7;
+    /*background-image: url("../imagenes/fondo3.jpg");
+    background-position: center top; 
+    background-repeat: no-repeat;*/
+    margin: 0px;
+	padding: 0px;
+}
+#descripcion > a {
+	color: #FFF;
+	font-weight: bold;
+}
+#descripcion > a:hover {
+	text-decoration: underline;
+}
+
+section#container_global>header {
+	text-align: center;
+	padding: 10px 0px 0px 0px;
+	width: 900px;
+	margin: 0px auto;
+	background-color: #000;
+	background-image: url("../imagenes/fondo3.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+section#container_global {
+	width: 900px;
+	margin: 0px auto 0px auto;
+	padding: 10px 10px 8px 10px;
+	box-shadow: 0px 5px 7px #333;
+	background-color: #F1F1F1;
+}
+#main_principal {
+	border: 1px solid #F9F9F9;
+    font-size: 12px;
+    margin: 0 auto;
+	box-shadow: 0px 4px 3px #D2D2D2;
+	background-color: #F9F9F9;
+	border-radius: 0px 0px 5px 5px;
+	padding: 0px 0px 0px 10px;
+}
+#main_principal li {
+	display: inline-block;
+}
+#main_principal li a {
+	display: block;
+	line-height: 18px;
+	font-size: 18px;
+	font-family: helveticaLT;
+	padding: 10px 8px;
+	color: #363636;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+#main_principal li a:hover {
+	color: #000;
+}
+section#container_global section #content {
+	width: 900px;
+	margin: 0px auto;
+	text-align:center;
+}
+div h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #0A2609;
+	line-height: 27px; 
+}
+div p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #636363;
+	line-height: 27px;
+}
+div strong{
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #636363;
+	line-height: 27px;
+}
+
+#container_down {
+
+}
+
+#container_down aside {
+	display: inline-block;
+	margin: 0px;
+	padding: 3px 0px 0px 0px;
+	width: 40%;
+	border-top: 1px solid #C1C1C1;
+}
+#container_down aside:last-child {
+	width: 60%;
+	
+}
+#container_down aside:first-child {
+	/*width: 50%;*/
+}
+#container_down aside:last-child {
+	/*width: 50%;*/
+	text-align: right;
+}
+#container_down aside ul  {
+	margin: 0px;
+	padding: 0px;
+}
+#container_down aside ul li {
+	display: inline-block;
+}
+#container_down aside ul li a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #707070;
+	text-decoration: none;
+	margin: 0px 5px;
+}
+#container_down aside ul li a:hover {
+	text-decoration: underline;
+}
+#container_down aside ul li a.phone {
+	background-image: url("../imagenes/social/phone.png");
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+#container_down aside ul li a.email {
+    background-image: url("../imagenes/social/mail.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+	padding-left: 20px;
+}
+#container_down aside ul li a.facebook {
+    background-image: url("../imagenes/social/facebook.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+	padding-left: 20px;
+}
+#container_down aside ul li a.twitter {
+    background-image: url("../imagenes/social/twitter.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+	padding-left: 20px;
+}
+#logo {
+	float: left;
+	background-color: #000;
+	background-image: url("../imagenes/fondo3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+	padding: 10px 15px;
+	margin: 0px 30px 5px 0px;
+}
+#cestita{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #707070;
+	text-decoration: none;
+	cursor:pointer;
+	margin: 0px 5px;
+}
+#cestita:hover{
+	text-decoration: underline;
+}
+#cesta{
+	display: block;
+	line-height: 18px;
+	font-size: 18px;
+	font-family: helveticaLT;
+	padding: 10px 15px;
+	color: #363636;
+	text-transform: capitalize;
+	text-decoration: none;
+	right: 5px;
+}
+#cesta:hover{
+	text-decoration: underline;
+}
+
+/* Slide */
+
+#slide{
+	position: relative;
+	height: 200px;
+	width: 900px;
+	left: 0px;
+	top: 0px;
+}
+
+#slideshow-container{
+	width: 900px;
+	height: 200px;
+	position:relative;
+	}
+#slideshow-container img {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	width: 900px;
+	height: 200px;
+	top: 0px;
+}
+
+
+/* Lightbox */
+
+#velo{
+	position:fixed;
+	top:0px;
+	left:0px;
+	background-color:#000;
+	visibility:hidden;
+	z-index:8;
+	height:100%;
+	width:100%;
+}
+#ibox{
+	position:fixed;
+	top:0px;
+	left:0px;
+	border:1px solid #999;
+	z-index:9;
+	height:0px;
+	width:0px;
+	visibility:hidden;
+	overflow:hidden !important;
+}
+#ifox{
+	height:0px;
+	width:0px;
+	overflow:hidden !important;
+}
+
+
+/* Area Central */
+
+#inicio{
+	position: relative;
+	width: 820px;
+	height: auto;
+	display:none;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+#cigarros{
+	position: relative;
+	width: 900px;
+	height: auto;
+	display:none;
+}
+
+#complementos{
+	position: relative;
+	width: 900px;
+	height: auto;
+	display:none;
+}
+
+#recambios{
+	position: relative;
+	width: 900px;
+	height: auto;
+	display:none;
+}
+
+#esencias{
+	position: relative;
+	width: 900px;
+	height: auto;
+	display:none;
+}
+
+#tiendas{
+	position: relative;
+	width: 880px;
+	height: auto;
+	top: 20px;
+	margin-left:10px;
+}
+
+#mastiendas{
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #636363;
+	line-height: 27px;
+	width: 870px;
+	height: auto;
+}
+
+#tmastiendas{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #636363;
+	line-height: 27px;
+}
+#tmastiendas:hover{
+	text-decoration: underline;
+}
+
+#fotienda{
+	max-height: 120px !important;
+	max-width: 200px !important;
+}
+
+#abretienda{
+	position:relative;
+	display:none;
+	width: 820px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+#distribucion{
+	position:relative;
+	display:none;
+	width: 820px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+#pasate{
+	position:relative;
+	display:none;
+	width: 820px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+#FAQ{
+	position:relative;
+	display:none;
+	width: 820px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+#aviso{
+	position:relative;
+	display:none;
+	width: 820px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+
+/* Parte Articulos en lightbox */
+
+.imagen{
+	max-height: 180px !important;
+	max-width: 180px !important;
+	z-index: 5;
+	top: 5px;
+}
+.precio{
+	z-index: 6;
+	font-family: Arial;
+	height: 17px;
+	width: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+	opacity: 1.0;
+	text-align: center;
+	background-color: #999;
+	position: absolute;
+}
+
+.nombre{
+	z-index: 5;
+	font-family: Arial;
+	height: 17px;
+	width: 190px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+	opacity: 1.0;
+	text-align: center;
+	background-color: #999;
+	position: relative;
+	top:185px; 
+	right:0px;
+}
+
+.cajetin{
+	text-align:center;
+	height:200px;
+	width:190px;	
+	z-index:4;
+	background-color:#FFF;
+	border:1px solid #999;
+	cursor:pointer;
+	box-shadow: 6px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.cajetin:hover{
+	cursor: pointer;
+	box-shadow: 6px 3px 3px 0px #999;
+	opacity:0.8;
+
+}
+
+#articulo{
+	background-image:url(../imagenes/fondo3.jpg);
+	position: absolute;
+	height: 450px;
+	width: 750px;
+	overflow: hidden;
+}
+
+#disclaimer{
+	background-image: url(../imagenes/fondo3.jpg);
+	position: absolute;
+	height: 450px;
+	width: 750px;
+	overflow: hidden;
+	color: #FFF;
+	text-align: center;
+	font-size: 24px;
+}
+
+#vacaciones{	
+    color: #FFF;
+	text-align: center;
+	font-size: 25px;
+	font-weight:bold;
+	
+}
+
+
+#izquierda{
+	position: absolute;
+	height: 450px;
+	width: 400px;
+	left: 0px;
+	top: 0px;
+}
+
+#derecha{
+	position: absolute;
+	height: 450px;
+	width: 350px;
+	left: 400px;
+	top: 0px;
+}
+
+
+#foticos{
+	position: absolute;
+	z-index: 5;
+	top: 390px;
+	left: 7px;
+	width: 385px;
+	height: 50px;
+	text-align: center;
+}
+#foticos img{
+	max-height: 50px !important;
+	max-width: 50px !important;
+}
+
+#imagengrande{
+	max-height: 350px !important;
+	max-width: 650px !important;
+	z-index: 5;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+#minigaleria{
+	position: absolute;
+	z-index: 5;
+	top: 390px;
+	left: 15px;
+	width: 720px;
+	height: 50px;
+	text-align: center;
+}
+#minigaleria img{
+	max-height: 50px !important;
+	max-width: 50px !important;
+}
+
+#fotiendagrande{
+	max-height: 350px !important;
+	max-width: 350px !important;
+	z-index: 5;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+#descripcion{
+	position: absolute;
+	color: #999;
+	text-align: justify;
+	overflow-y: scroll;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 325px;
+	height: 300px;
+	padding: 10px;
+	z-index: 1;	top: 35px;
+	left: 5px;
+}
+#selector{
+	position: absolute;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #FFF;
+	width: 317px;
+	height: 30px;
+	z-index: 1;
+	top: 367px;
+	left: 17px;
+	visibility: visible;
+}
+#preciogrande{
+	position: absolute;
+	font-family: helveticaLT;
+	color: #CCC;
+	font-size: 24px;
+	width: auto;
+	height: auto;
+	z-index: 1;
+	top: 410px;
+	left: 20px;
+}
+#comprar{
+	position: absolute;
+	text-decoration: none;
+	width: auto;
+	height: auto;
+	z-index: 1;
+	top: 410px;
+	left: 210px;
+	visibility: visible;
+}
+#comprar a{
+	font-family: helveticaLT;
+	font-size: 20px;
+	cursor:pointer;
+	text-decoration: underline;
+	color: #999;
+	text-decoration:none;
+}
+#comprar a:hover{
+	color:#F00;
+	cursor:pointer;
+	text-decoration: underline;
+}
+#nombre{
+	position: absolute;
+	font-family: helveticaLT;
+	font-size: 20px;
+	color: #999;
+	top: 14px;
+	left: 5px;
+	top: 5px;
+	width: 300px;
+	height: auto;
+}
+#cerrar{
+	position: absolute;
+	font-family: helveticaLT;
+	color: #FFF;
+	font-size: 24px;
+	top: 5px;
+	left: 725px;
+	z-index: 99;
+}
+#aceptar{
+	position: absolute;
+	font-family: helveticaLT;
+	color: #FFF;
+	font-size: 24px;
+	top: 370px;
+	left: 375px;
+	z-index: 99;
+	width: 324px;
+	text-align: center;
+}
+#cancelar{
+	position: absolute;
+	font-family: helveticaLT;
+	color: #FFF;
+	font-size: 24px;
+	top: 370px;
+	left: 58px;
+	z-index: 99;
+	width: 301px;
+	text-align: center;
+}
+#comprado {
+	font-family: helveticaLT;
+	position: absolute;
+	height: 217px;
+	width: 320px;
+	top: 93px;
+	font-size: 20px;
+	color: #666;
+	left: 13px;
+}
+
+#titulocaja{
+	position: absolute;
+	top: 5px;
+	left:25px;
+	width: 700px;
+	height: 20px;
+	text-align: center;
+	font-family: helveticaLT;
+	font-size: 20px;
+	color: #FFF;
+}
+
+#carrito{
+	position:absolute;
+	top: 30px;
+	left: 0px;
+	width:750px;
+	height:350px;
+	text-align:center;
+	overflow-y:scroll;
+}
+#subcarrito{
+	position: absolute;
+	top: 380px;
+	left: 0px;
+	width: 750px;
+	height: 70px;
+	font-family: helveticaLT;
+	font-size: 20px;
+	color: #FFF;
+}
+
+#caja{
+	position:absolute;
+	top: 30px;
+	left: 0px;
+	width:750px;
+	height:420px;
+	text-align:center
+}
+
+.seguir a{
+	font-family: helveticaLT;
+	font-size: 20px;
+	cursor:pointer;
+	text-decoration: underline;
+	color: #FFF;
+	text-decoration:none;
+}
+.seguir:hover{
+	font-family: helveticaLT;
+	font-size: 20px;
+	color: #F00;
+	text-decoration:underline;
+}
+/*******************/
+#main_principal li ul {
+display: none; position: absolute; margin: 0px; padding: 0px; z-index: 20; background-color: rgb(249, 249, 249); border-right: 1px solid rgb(153, 153, 153); border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(153, 153, 153) rgb(153, 153, 153); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none;
+}
+#main_principal li:hover ul {
+	display: block;
+}
+#main_principal li li {
+	display: block;
+}
+#esencias_dea,
+#esencias_dekang,
+#joyetech_cigarrillos,
+#joyetech_complementos,
+#joyetech_recambios,
+#eyre {
+	display: none;
+}

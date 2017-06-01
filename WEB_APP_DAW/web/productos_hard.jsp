@@ -25,7 +25,7 @@
             int cantidad = productos.getInt("existencias");
             String tipo = productos.getString("tipo");
 
-            if (tipo.equals("hard")) {
+            if (tipo.equals("hardware")) {
 
 
                 /*Algoritmo para hacer un salto de linea en la descripcion 

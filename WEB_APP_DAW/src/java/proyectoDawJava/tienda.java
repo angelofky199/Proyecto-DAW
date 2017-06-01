@@ -6,7 +6,6 @@
 package proyectoDawJava;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -96,6 +95,7 @@ public class tienda extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            ex.printStackTrace();
             Logger.getLogger(tienda.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

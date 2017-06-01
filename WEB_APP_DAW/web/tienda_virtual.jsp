@@ -12,7 +12,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script type="text/javascript" src="./js/libCapas.js"></script>
     </head>
     <body>
         <div>
@@ -41,7 +40,7 @@
                     <td style="width: 120px"><%=p.getNombre()%></td>
                     <td style="width: 100px"><%=p.getPrecio()%><td>
                     <td>
-                        <form method="post" onsubmit="ProcesarForm(this, 'tienda', 'contenido');
+                        <form method="post" onsubmit="ProcesarForm(this, './tienda', 'contenido');
                                 return false;">
                             <input type="hidden" name="id" value="<%=p.getId()%>">
                             <input type="text" name="cantidad" value="<%=p.getCantidad()%>"> &nbsp;&nbsp;
@@ -49,7 +48,7 @@
                         </form>
                     </td>
                     <td>
-                        <form method="post" onsubmit="ProcesarForm(this, 'tienda', 'contenido');
+                        <form method="post" onsubmit="ProcesarForm(this, './tienda', 'contenido');
                                 return false;">
                             <input type="hidden" name="id" value="<%=p.getId()%>">
                             <input type="hidden" name="cantidad" value="0">

@@ -6,7 +6,6 @@
 package proyectoDawJava;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import static java.lang.System.out;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -38,12 +37,12 @@ public class login extends HttpServlet {
         accesoBD bd = new accesoBD();
         boolean registrado = bd.comprobarUsuario(usuario, pass);
         if(registrado)
-            response.sendRedirect("inicio.htlm");
+            response.sendRedirect("./inicio.html");
         else{
             out.println("<script type=\"text/javascript\">");
             out.println("alert('User or password incorrect');");
             out.println("</script>");
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("./login_usuario.jsp");
         }
     }
 

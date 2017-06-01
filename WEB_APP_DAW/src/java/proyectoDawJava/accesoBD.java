@@ -53,19 +53,21 @@ public class accesoBD {
     public int existenciasProductoBD(int id) throws SQLException {
         abrirConexionBD();
         ResultSet resultados = null;
-        int existencias;
+        int existencias = 0;
         try {
             String con;
             Statement s = conexionBD.createStatement();
             con = "SELECT existencias FROM productos WHERE id = " + String.valueOf(id);
             resultados = s.executeQuery(con);
+
+            if (resultados.next()) {
+                existencias = resultados.getInt("existencias");
+            } else {
+                existencias = 0;
+            }
+
         } catch (Exception e) {
             System.out.println("Error ejecutando la consulta a la BB.DD....");
-        }
-        if (resultados == null) {
-            existencias = 0;
-        } else {
-            existencias = resultados.getInt("existencias");
         }
 
         return existencias;
@@ -73,34 +75,38 @@ public class accesoBD {
 
     public void registrarUsuario(String nombre, String nombreUsuario, String contraseña) {
         abrirConexionBD();
-        
+
         try {
             String con;
             Statement s = conexionBD.createStatement();
-            con = "INSERT INTO usuarios(id,usuario,nombreUsuario, contraseña) VALUES (NULL,'" + nombre + "','" + nombreUsuario + "', '" +contraseña+"')";
-            s.executeQuery(con);
+            con = "INSERT INTO usuarios(nombre,nombreUsuario, contrasenya,activado) VALUES ('" + nombre + "','" + nombreUsuario + "', '" + contraseña + "', '1');";
+            s.executeUpdate(con);
         } catch (Exception e) {
             System.out.println("Error al insertar user a la BB.DD....");
         }
-        
+
     }
-    
-     public boolean comprobarUsuario(String nombreUsuario, String pass) throws SQLException {
+
+    public boolean comprobarUsuario(String nombreUsuario, String pass) throws SQLException {
         abrirConexionBD();
         boolean ok = false;
         ResultSet resultados = null;
         try {
             String con;
             Statement s = conexionBD.createStatement();
-            con = "SELECT contrasenya FROM usuarios WHERE nombre_usuario =" + nombreUsuario;
+            con = "SELECT contrasenya FROM usuarios WHERE nombreUsuario LIKE '" + nombreUsuario + "';";
             resultados = s.executeQuery(con);
+
+            if (resultados.getString("contrasenya").equals(pass)) {
+                ok = true;
+            }
+
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Error ejecutando la consulta a la BB.DD....");
         }
         //String contraseña = resultados.getString("contrasenya");
-        if( resultados.next())
-            if(resultados.getString("contrasenya").equals(pass))
-            ok = true;
+
         return ok;
     }
 
