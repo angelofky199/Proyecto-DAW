@@ -25,9 +25,8 @@
             int cantidad = productos.getInt("existencias");
             String tipo = productos.getString("tipo");
 
-            
-            if (tipo.equals("soft")) {
-                
+            if (tipo.equals("hard")) {
+
 
                 /*Algoritmo para hacer un salto de linea en la descripcion 
                  cuando esta supera un limite de caracteres
@@ -57,12 +56,13 @@
         <div class="col-lg-6"><h3><%=precio%>€<h3></div>
         <div class="col-lg-12 text-justify"><p><%=descripcion%></p></div>
         <div class="col-lg-12 text-justify">
-            <form method="post" onsubmit="ProcesarForm(this, 'carrito')">
-            <%=nombre%>
-            <%=precio%>
-            <input type="submit" value="Añadir al carrito">
+            <form method="post" onsubmit="ProcesarForm(this, './carrito', 'contenido'); return false;">
+                <input type="hidden" name="id" value="<%=id%>">
+                <input type="hidden" name="nombre" value="<%=nombre%>">
+                <input type="hidden" name="precio" value="<%=precio%>">
+                <input type="submit" value="Añadir al carrito">
            
-        </form>
+            </form>
         
         </div>
         
@@ -71,4 +71,3 @@
                 <%}%>
             <%}%>
         <%}%>            </div>
-

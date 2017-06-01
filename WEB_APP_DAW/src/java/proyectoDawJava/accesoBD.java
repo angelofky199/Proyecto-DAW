@@ -49,8 +49,8 @@ public class accesoBD {
         }
         return resultados;
     }
-   
-     public int existenciasProductoBD(int id) throws SQLException {
+
+    public int existenciasProductoBD(int id) throws SQLException {
         abrirConexionBD();
         ResultSet resultados = null;
         int existencias;
@@ -62,14 +62,46 @@ public class accesoBD {
         } catch (Exception e) {
             System.out.println("Error ejecutando la consulta a la BB.DD....");
         }
-        if(resultados==null){
+        if (resultados == null) {
             existencias = 0;
-        }
-        else
+        } else {
             existencias = resultados.getInt("existencias");
-        
+        }
+
         return existencias;
     }
-     
-     
+
+    public void registrarUsuario(String nombre, String nombreUsuario, String contraseña) {
+        abrirConexionBD();
+        
+        try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            con = "INSERT INTO usuarios(id,usuario,nombreUsuario, contraseña) VALUES (NULL,'" + nombre + "','" + nombreUsuario + "', '" +contraseña+"')";
+            s.executeQuery(con);
+        } catch (Exception e) {
+            System.out.println("Error al insertar user a la BB.DD....");
+        }
+        
+    }
+    
+     public boolean comprobarUsuario(String nombreUsuario, String pass) throws SQLException {
+        abrirConexionBD();
+        boolean ok = false;
+        ResultSet resultados = null;
+        try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            con = "SELECT contrasenya FROM usuarios WHERE nombre_usuario =" + nombreUsuario;
+            resultados = s.executeQuery(con);
+        } catch (Exception e) {
+            System.out.println("Error ejecutando la consulta a la BB.DD....");
+        }
+        //String contraseña = resultados.getString("contrasenya");
+        if( resultados.next())
+            if(resultados.getString("contrasenya").equals(pass))
+            ok = true;
+        return ok;
+    }
+
 }

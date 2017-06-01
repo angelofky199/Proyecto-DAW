@@ -9,6 +9,22 @@
         <servlet-name>carrito</servlet-name>
         <servlet-class>proyectoDawJava.carrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>tienda</servlet-name>
+        <servlet-class>proyectoDawJava.tienda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>tienda1</servlet-name>
+        <servlet-class>proyectoDawJava.tienda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>proyectoDawJava.login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registro</servlet-name>
+        <servlet-class>proyectoDawJava.registro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -16,6 +32,22 @@
     <servlet-mapping>
         <servlet-name>carrito</servlet-name>
         <url-pattern>/carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tienda</servlet-name>
+        <url-pattern>/tienda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tienda1</servlet-name>
+        <url-pattern>/tienda1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registro</servlet-name>
+        <url-pattern>/registro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

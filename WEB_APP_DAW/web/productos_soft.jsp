@@ -26,7 +26,7 @@
             String tipo = productos.getString("tipo");
 
             
-            if (tipo.equals("hard")) {
+            if (tipo.equals("soft")) {
                 
 
                 /*Algoritmo para hacer un salto de linea en la descripcion 
@@ -55,9 +55,21 @@
         </div>
         <div class="col-lg-6"><h4><%=nombre%></h4></div>
         <div class="col-lg-6"><h3><%=precio%>€<h3></div>
-                    <div class="col-lg-12 text-justify"><p><%=descripcion%></p></div>
-                    </div>
+        <div class="col-lg-12 text-justify"><p><%=descripcion%></p></div>
+        <div class="col-lg-12 text-justify">
+            <form method="post" onsubmit="ProcesarForm(this, './carrito', 'contenido'); return false;">
+                <input type="hidden" name="id" value="<%=id%>">
+                <input type="hidden" name="nombre" value="<%=nombre%>">
+                <input type="hidden" name="precio" value="<%=precio%>">
+                <input type="submit" value="Añadir al carrito">
+           
+            </form>
+        
+        </div>
+        
+    </div>
                     
                 <%}%>
             <%}%>
         <%}%>            </div>
+
