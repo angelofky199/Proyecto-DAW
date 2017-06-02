@@ -38,12 +38,18 @@
                         return false"> Administrador </a>
         </li>
       
-        <li> <a href="#"> Sesion inciada por: &nbsp;<%=session.getAttribute("usuario")%> </a>
-            <ul>
-                <li><a href="" onclick="<% session.setAttribute("usuario", null);%>"> Cerrar Sesión </a></li>
+        <li> <a href=""> Sesion inciada por: &nbsp;<%=session.getAttribute("usuario")%> </a>
+            
+             <ul>
+                <li><a href="" onclick="Cargar('pedidos.jsp', 'contenido');
+                        return false"> Mis pedidos </a>
             </ul>
-        </li>
+            
 
+        </li>
+        <ul>
+                <li><a href="" onclick="<% session.setAttribute("usuario", null);%>"> Cerrar Sesión </a></li>
+       </ul>
         
     </ul>
 

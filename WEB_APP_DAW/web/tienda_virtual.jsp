@@ -16,28 +16,27 @@
     <body>
         <div>
             <table>
-                
+
                 <%
-                    
+
                     ArrayList<producto> carrito = (ArrayList) session.getAttribute("carrito");
-                    
-                    if(carrito == null)
-                    {%>
-                    <h1>No hay productos en el carrito</h1>  
-                     <tr>
-                         
-                    </tr>
-                   <% }else{
-                    %> <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
+                    float precioTotal = 0;
+                    if (carrito == null) {%>
+                <h1>No hay productos en el carrito</h1>  
+                <tr>
+
+                </tr>
+                <% } else {
+                %> <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
                     <%
-                    producto p = null;
-                    
-                    for (int i = 0; i < carrito.size(); i++) {
-                        p = carrito.get(i);
-                    
-                %>
-               
-                    
+                        producto p = null;
+
+                        for (int i = 0; i < carrito.size(); i++) {
+                            p = carrito.get(i);
+
+                    %>
+
+
                 <tr>
                     <td style="width: 120px"><%=p.getId()%></td>
                     <td style="width: 120px"><%=p.getNombre()%></td>
@@ -58,11 +57,23 @@
                             <input type="submit" value="Eliminar producto">
                         </form>
                     </td>
+
+
+
+                    <%
+                                precioTotal = p.getCantidad() * p.getPrecio();
+                            }
+                        }
+                    %>
+
                 </tr>
-                <%
-                    }
-                    }
-                %>
             </table>
+            <br><br>
+            <form method="post" onsubmit="ProcesarForm(this, './pedidos', 'contenido');
+                        return false;">
+                <input type="hidden" name="precioTotal" value="<%=precioTotal%>">
+
+                <input type="submit" value="Realizar Pedido">
+            </form>
         </div>
     </body>

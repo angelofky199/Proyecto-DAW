@@ -22,7 +22,7 @@ public class accesoBD {
 
     public void abrirConexionBD() {
         if (conexionBD == null) { // daw es el nombre de la base de datos que hemos creado con anterioridad.
-            String nombreConexionBD = "jdbc:mysql://localhost/daw_tienda_bd";
+            String nombreConexionBD = "jdbc:mysql://localhost/daw_tienda_buena";
             try { // root y sin clave es el usuario por defecto que crea WAMPP.
                 Class.forName("com.mysql.jdbc.Driver");
                 conexionBD = DriverManager.getConnection(nombreConexionBD, "root", "");
@@ -98,10 +98,11 @@ public class accesoBD {
             Statement s = conexionBD.createStatement();
             con = "SELECT contrasenya FROM usuarios WHERE nombreUsuario LIKE '" + nombreUsuario + "';";
             resultados = s.executeQuery(con);
-            
-            if (resultados.next()) 
+
+            if (resultados.next()) {
                 c = resultados.getString("contrasenya");
-            
+            }
+
             if (c.equals(pass)) {
                 ok = true;
             }
@@ -113,6 +114,59 @@ public class accesoBD {
         //String contraseña = resultados.getString("contrasenya");
 
         return ok;
+    }
+
+    public int obtenerID(String nombreUsuario) throws SQLException {
+        abrirConexionBD();
+
+        ResultSet resultados = null;
+        String con;
+        int id = 0;
+        try {
+
+            Statement s = conexionBD.createStatement();
+            con = "SELECT id FROM usuarios WHERE nombreUsuario LIKE '" + nombreUsuario + "';";
+            resultados = s.executeQuery(con);
+
+            if (resultados.next()) {
+                id = resultados.getInt("id");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error ejecutando la consulta a la BB.DD....");
+        }
+        //String contraseña = resultados.getString("contrasenya");
+
+        return id;
+    }
+
+    public void registrarPedido(int idCliente, String fecha, String estado, float precioTotal) {
+        abrirConexionBD();
+
+        try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            con = "INSERT INTO pedido(id_cliente, fecha, estado, importe) VALUES ('" + idCliente + "','" + fecha + "', '" + estado + "','" + precioTotal + "' );";
+            s.executeUpdate(con);
+        } catch (Exception e) {
+            System.out.println("Error al insertar user a la BB.DD....");
+        }
+
+    }
+    
+     public ResultSet obtenerPedidosBD() {
+        abrirConexionBD();
+        ResultSet resultados = null;
+        try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            con = "SELECT id, id_cliente, fecha ,estado,importe FROM pedido";
+            resultados = s.executeQuery(con);
+        } catch (Exception e) {
+            System.out.println("Error ejecutando la consulta a la BB.DD....");
+        }
+        return resultados;
     }
 
 }

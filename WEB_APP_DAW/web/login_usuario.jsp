@@ -7,14 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <form method="post" onsubmit="ProcesarForm(this, './login', 'contenido');
         return false;">
-    <%
-        
-        if (request.getSession().getAttribute("usuario") == null) { 
-            %>
-            <script>alert("Hola");</script>
-            <%
-        }
-    %>
+   
     
     
     <div>Introduce tu nombre de usuario y contraseña</div><br>

@@ -5,13 +5,17 @@
  */
 package proyectoDawJava;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Usuario
  */
-public class carrito extends HttpServlet {
+public class pedidos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,49 +40,26 @@ public class carrito extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession sesion = request.getSession(true); // Accedemos al entorno de sesión
-        if (request.getSession().getAttribute("usuario") == null) { 
-            
-            response.sendRedirect("login_usuario.jsp");
+
+        Calendar c = Calendar.getInstance();
+        String dia = Integer.toString(c.get(Calendar.DATE));
+        String mes = Integer.toString(c.get(Calendar.MONTH));
+        String annio = Integer.toString(c.get(Calendar.YEAR));
+        String fecha = dia + "/" + mes + "/" + annio;
         
-            
-        } else {
+        String p = request.getParameter("precioTotal");
+        float precio = Float.parseFloat(p);
+        int idCliente;
 
-            producto p = new producto();
-            p.setId(Integer.parseInt(request.getParameter("id")));
-            p.setNombre(request.getParameter("nombre"));
-            p.setPrecio(Float.parseFloat(request.getParameter("precio")));
-            
-            ArrayList<producto> carrito = (ArrayList) sesion.getAttribute("carrito"); // Carrito
-            if (carrito == null) {
-                carrito = new <producto> ArrayList();
-                sesion.setAttribute("carrito", carrito);
-            }
-            int i = 0;
-            while (i < carrito.size() && carrito.get(i).getId() != p.getId()) {
-                i++;
-            }
-            if (i < carrito.size()) {
-                accesoBD bd = new accesoBD();
-                int existencias = bd.existenciasProductoBD(p.getId()); // Existencias del producto
-                int actual = carrito.get(i).getCantidad();
-                if (actual < existencias) {
-                    carrito.get(i).setCantidad(actual + 1);
-                }
-                p.setCantidad(carrito.get(i).getCantidad());
-            } else {
-                p.setCantidad(1);
-                carrito.add(p);
-            }
-            request.setAttribute("existencias", p.getCantidad());
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/carrito.jsp");
-            dispatcher.forward(request, response);
+        String user = (String) request.getSession().getAttribute("usuario");
+        accesoBD bd = new accesoBD();
+        idCliente = bd.obtenerID(user);
+        bd.registrarPedido(idCliente, fecha, "pendiente", precio);
+        response.sendRedirect("./pedidos.jsp");
 
-        }
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -93,7 +74,7 @@ public class carrito extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(carrito.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(pedidos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -111,7 +92,7 @@ public class carrito extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(carrito.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(pedidos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
