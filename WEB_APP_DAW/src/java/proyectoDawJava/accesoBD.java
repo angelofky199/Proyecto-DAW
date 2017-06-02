@@ -9,6 +9,7 @@ package proyectoDawJava;
  *
  * @author Usuario
  */
+import static java.lang.System.out;
 import java.sql.*;
 
 public class accesoBD {
@@ -93,11 +94,15 @@ public class accesoBD {
         ResultSet resultados = null;
         try {
             String con;
+            String c = "";
             Statement s = conexionBD.createStatement();
             con = "SELECT contrasenya FROM usuarios WHERE nombreUsuario LIKE '" + nombreUsuario + "';";
             resultados = s.executeQuery(con);
-
-            if (resultados.getString("contrasenya").equals(pass)) {
+            
+            if (resultados.next()) 
+                c = resultados.getString("contrasenya");
+            
+            if (c.equals(pass)) {
                 ok = true;
             }
 

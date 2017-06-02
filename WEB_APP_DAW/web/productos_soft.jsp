@@ -62,7 +62,7 @@
                 <input type="hidden" name="nombre" value="<%=nombre%>">
                 <input type="hidden" name="precio" value="<%=precio%>">
                 <input type="submit" value="Añadir al carrito">
-           
+                
             </form>
         
         </div>

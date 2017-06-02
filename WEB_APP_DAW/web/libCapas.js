@@ -99,7 +99,7 @@ function ProcesarForm(formulario, url, capa)
 			
 function cargaInicial()
 {                            
-	Cargar('menu.html','menuPrincipal');
+	Cargar('menu.jsp','menuPrincipal');
 	Cargar('index.html','contenido');
         Cargar('footer.html','footer');
 }

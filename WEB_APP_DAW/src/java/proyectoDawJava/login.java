@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,14 +35,15 @@ public class login extends HttpServlet {
             throws ServletException, IOException, SQLException {
         String usuario = request.getParameter("usuario");
         String pass = request.getParameter("pass");
+        HttpSession sesion = request.getSession();
         accesoBD bd = new accesoBD();
         boolean registrado = bd.comprobarUsuario(usuario, pass);
-        if(registrado)
-            response.sendRedirect("./inicio.html");
+        if(registrado){
+            sesion.setAttribute("usuario", usuario);
+            response.sendRedirect("./index.html");
+        }
         else{
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('User or password incorrect');");
-            out.println("</script>");
+            
             response.sendRedirect("./login_usuario.jsp");
         }
     }

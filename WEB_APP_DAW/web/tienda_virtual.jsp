@@ -20,11 +20,12 @@
                 <%
                     
                     ArrayList<producto> carrito = (ArrayList) session.getAttribute("carrito");
+                    
                     if(carrito == null)
                     {%>
                     <h1>No hay productos en el carrito</h1>  
                      <tr>
-                    <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
+                         <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
                     </tr>
                    <% }else{
                     producto p = null;
