@@ -39,7 +39,8 @@ public class carrito extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession sesion = request.getSession(true); // Accedemos al entorno de sesión
         if (request.getSession().getAttribute("usuario") == null) { 
-            
+            out.println("<script language='JavaScript'>");
+            out.println("alert('No puedes comprar sin inciar sesion')</script>");
             response.sendRedirect("login_usuario.jsp");
         
             

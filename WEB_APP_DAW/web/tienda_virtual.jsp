@@ -25,9 +25,11 @@
                     {%>
                     <h1>No hay productos en el carrito</h1>  
                      <tr>
-                         <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
+                         
                     </tr>
                    <% }else{
+                    %> <th>id</th><th>nombre</th><th>precio</th><th>cantidad</th>
+                    <%
                     producto p = null;
                     
                     for (int i = 0; i < carrito.size(); i++) {

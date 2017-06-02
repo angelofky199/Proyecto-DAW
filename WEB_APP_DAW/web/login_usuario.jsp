@@ -11,7 +11,7 @@
         
         if (request.getSession().getAttribute("usuario") == null) { 
             %>
-            
+            <script>alert("Hola");</script>
             <%
         }
     %>
